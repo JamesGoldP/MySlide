@@ -1,0 +1,36 @@
+/* 全站公共CSS */
+/* reset*/
+body,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,dd{margin:0px;padding:0px;}
+body{font:12px 宋体;line-height: 20px;}
+
+/* IE和firefox li 的图标是不一样的,所以不需要默认的li图标*/
+li{list-style-type:none;}
+/*IE下面的图片默认是有border的*/
+img,input{border:0px;}
+/* reset*/
+.fl{float:left;}
+.fr{float:right;}
+.cle{clear: both;
+	font-size: 0px;
+    height: 0px;
+    overflow: hidden;}
+.mart10{margin-top:10px;}
+.marr10{margin-right:10px;}
+.marb10{margin-bottom:10px;}
+.marl10{margin-left:10px;}
+.mart5{margin-top:5px;}
+.marr5{margin-right:5px;}
+.marb5{margin-bottom:5px;}
+.marl5{margin-left:5px;}
+.relative{position:relative;}
+.absolute{position:absolute;}
+
+a,a:visited{text-decoration: none;}
+a.more:hover{}
+
+
+
+
+
+
+

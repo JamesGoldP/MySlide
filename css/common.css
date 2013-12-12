@@ -1,6 +1,6 @@
 /* 全站公共CSS */
 /* reset*/
-body,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,dd{margin:0px;padding:0px;}
+body,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,dd,p{margin:0px;padding:0px;}
 body{font:12px 宋体;line-height: 20px;}
 
 /* IE和firefox li 的图标是不一样的,所以不需要默认的li图标*/

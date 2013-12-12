@@ -149,7 +149,7 @@ jQuery.fn.extend({
                 n = n - 1 < 0 ? num :n-1;
                 if (options.haveNum) 
                 {
-                    _self.parent().children(".slide_ul").children("li").click();
+                    _self.parent().children(".slide_ul").children("li").eq(n).click();
                     init_auto();
                 }
                 else

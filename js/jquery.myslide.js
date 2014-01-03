@@ -62,7 +62,21 @@ jQuery.fn.extend({
                 left: "20px",
                 "z-index": 4
             });
+            
+            function lkText(){
+                //文字
+                if(_self.attr("alt")){
+                   _self.parent().children(".sli-text").html(_self.eq(n).find("img").attr("alt"));
+                }else if(_self.attr("title").length){
+                   _self.parent().children(".sli-text").html(_self.eq(n).attr("title"));
+                }
+            }
+
+            lkText();
         }
+
+
+        
 
         //数字导航切换
         if (options.haveNum) {
@@ -86,31 +100,20 @@ jQuery.fn.extend({
                 $(this).addClass(options.hoverChagneClass);
                 $(this).siblings().removeClass(options.hoverChagneClass);
                 if (options.linkText) {
-                    //文字
-                    if(_self.attr("alt")){
-                       _self.parent().children(".sli-text").html(_self.eq(n).find("img").attr("alt"));
-                    }else if(_self.attr("title").length){
-                       _self.parent().children(".sli-text").html(_self.eq(n).attr("title"));
-                    }
-
+                    lkText();
                 }
             });
             
             if(options.hoverChange){
-             _self.parent().children(".slide_ul").children("li").hover(function(){
+                _self.parent().children(".slide_ul").children("li").hover(function(){
                 init_auto();
                 n=$(this).index();
                 delayRun = setTimeout(fadeAB,options.delayTime);
                 $(this).addClass(options.hoverChagneClass);
                 $(this).siblings().removeClass(options.hoverChagneClass);
-                if (options.linkText) {
-                    //文字
-                    if(_self.attr("alt")){
-                       _self.parent().children(".sli-text").html(_self.eq(n).find("img").attr("alt"));
-                    }else if(_self.attr("title").length){
-                       _self.parent().children(".sli-text").html(_self.eq(n).attr("title"));
+                    if (options.linkText) {
+                        
                     }
-                }
                 },function(){
                       clearTimeout(delayRun);
                 });

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<meta name="Description" content="说明" />
+<meta name="Keywords" content="关键词" />
+<link rel="stylesheet" href="/common/common.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<style type="text/css">
+body,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,dd{margin:0px;padding:0px;}
+body{font:12px "宋体","微软雅黑" ;line-height: 22px;}
+li{list-style-type:none;}
+img,input{border:0px;}
+.fl{float:left;}
+.fr{float:right;}
+
+/* 清除浮动*/
+.clr:after{  
+    content:"";  
+    height:0px;  
+    visibility:hidden;  
+    display:block;  
+    clear:both;  
+}    
+.clr{  
+    zoom:1;  
+} 
+.slide_x{
+	width:600px;
+	height:280px;
+	position: relative;
+}
+.slide_x .box{position:relative;width:600px;height:280px;overflow: hidden;}
+.slide_x .list{width:9999px;}
+.slide_x .list li{float:left;width:600px;position: relative;}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+	var n=-1;
+	var sw;
+	var max=$("#slide_x .box li").length-1;
+	at();
+	setInterval(at, 3000);
+	function at(){
+	   _now=n;
+       _next= n>=max ? 0: ++n;
+       sw=_next*600;
+       if(_next==0&&_now==max){
+	      $("#slide_x .box li").eq(0).css({"left":"1800px"});
+	      sw=1800;
+	    }else if(_now==0){
+	       $("#slide_x .box li").eq(0).css({"left":""});
+	       $("#slide_x .box").scrollLeft(0);
+	    };
+       $("#slide_x .box").animate({"scrollLeft":(sw)});
+       n=_next;
+	} 
+});
+	
+</script>
+<body>
+	<div id="slide_x" class="slide_x">
+		<div class="box">
+			<ul class="list clr">
+				<li><a href="#1"><img src="images/slide_1.jpg" width="600" height="280"></a><p>焦点图说明文字 111</p></li>
+				<li><a href="#2"><img src="images/slide_2.jpg" width="600" height="280"></a><p>焦点图说明文字 222</p></li>
+				<li><a href="#3"><img src="images/slide_3.jpg" width="600" height="280"></a><p>焦点图说明文字 333</p></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

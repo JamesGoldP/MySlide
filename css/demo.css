@@ -306,7 +306,7 @@ h1.title .strong{
 /* banner8*/
 
 
-/* banner8*/
+
 .banner9 {
     height:250px;
     position:relative;
@@ -314,4 +314,17 @@ h1.title .strong{
 .banner9 div{
 	height:250px;
 }
-/* banner8*/
+
+
+
+
+.banner10 {
+	width:650px;
+    height:250px;
+    position:relative;
+    overflow: hidden;
+}
+.banner10 div{
+	height:250px;
+}
+

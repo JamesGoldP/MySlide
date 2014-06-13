@@ -7,8 +7,8 @@ jQuery.fn.extend({
             nextBtn: null,           //下一张幻灯片按钮
             haveNum: false,          //是否有数字导航
             linkText: false,         //是否有带透明的文字背景
-            effect: "fade",          //效果
-            hoverChange:true,        //鼠标经过是否切换
+            effect: "x",          //效果
+            hoverChange:false,        //鼠标经过是否切换
             hoverChagneClass:"on",    //鼠标移上去的样式
             delayTime:1000,           //鼠标经过时对象切换迟滞时间，推荐值为300ms
             slideTime:800
@@ -17,7 +17,7 @@ jQuery.fn.extend({
         var n = -1;     //索引
         var _next=-1;
         var achange = setInterval(autoChange, options.changeTime);    //定时器
-        var max = $(this).find(".item").length - 1;          //计算幻灯片数量                  
+        var max = $(this).find(".item").length - 1;          //计算幻灯片数量         
         var parent=$(this);
         var _self = $(this).find(".item");
         var _moveVal;                                                 //移动值
@@ -171,7 +171,6 @@ jQuery.fn.extend({
                 _self.parent().children(".slide_ul").children("li").eq(_next).click();
             } else {
                 fadeAB();
-
             }
             if (options.linkText) {
                     lkText();

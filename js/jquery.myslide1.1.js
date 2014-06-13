@@ -22,7 +22,7 @@ jQuery.fn.extend({
         _self.css({
             height:_self.children("div").height()+"px",
             display:"block",
-            width:_self.children("div").width()+"px",
+            width:"100%",
             position:"absolute",
             left:"0px",
             top:"0px"
@@ -67,9 +67,9 @@ jQuery.fn.extend({
         //数字导航切换
         if (options.haveNum) {
             if(_self.parent().children(".slide_ul").length==0){
-                var slide_ul = "<ul class='slide_ul'>";
+                var slide_ul = "<ul class='slide_ul clr'>";
                 for (var i = 0; i <= num; i++) {
-                    slide_ul += "<li >"+(i+1)+"</li>"
+                    slide_ul += "<li ></li>"
                 }
                 slide_ul += "</ul>";
                 _self.eq(num).after(slide_ul);
@@ -149,7 +149,7 @@ jQuery.fn.extend({
                 n = n - 1 < 0 ? num :n-1;
                 if (options.haveNum) 
                 {
-                    _self.parent().children(".slide_ul").children("li").eq(n).click();
+                    _self.parent().children(".slide_ul").children("li").click();
                     init_auto();
                 }
                 else

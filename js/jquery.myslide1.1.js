@@ -21,7 +21,7 @@ jQuery.fn.extend({
         //设置a的高度
         _self.css({
             height:_self.children("div").height()+"px",
-            display:"block",
+            display:"none",
             width:"100%",
             position:"absolute",
             left:"0px",

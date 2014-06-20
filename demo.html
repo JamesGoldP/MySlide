@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/common.css" type="text/css" />
 <link rel="stylesheet" href="css/demo.css" type="text/css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.myslide.js"></script>
+<script type="text/javascript" src="js/jquery.myslide1.1.js"></script>
 <!--[if lte IE 6]>
   <script type="text/javascript" src="js/png.js"></script>
   <script>
@@ -17,7 +17,6 @@
 <![endif]-->
 <script type="text/javascript">
 	$(document).ready(function(){
-		/*
          $(".banner1>a").myslide({
          });
 
@@ -25,10 +24,9 @@
          	prevBtn:"#prev",
 		    nextBtn:"#next"
          });
-        */
 
-         $("#banner3").myslide();
-        /*
+         $(".banner3>a").myslide();
+     
          $(".banner4>a").myslide({
          	prevBtn:"#prev4",
 		    nextBtn:"#next4"
@@ -50,11 +48,8 @@
             hoverChagneClass:"act",
             effect:"slide",
             hoverChange:false
-         });
-         $(".banner9>a").myslide({
-
-         }); 
-       */
+         });  
+  
 	});
 </script>
 </head>
@@ -77,7 +72,7 @@
             <span class="blue">nextBtn: null,</span>         <span class="green">    //下一张幻灯片按钮</span>
             <span class="blue">haveNum: false,</span>        <span class="green">  //是否有数字导航</span>
             <span class="blue">linkText: false,</span>       <span class="green">     //是否有带透明的文字背景</span>
-            <span class="blue">effect: "fade",</span>        <span class="green">    //效果有fade(淡入淡出),x(横向切换),y(纵向切换)3中效果,默认是fade效果</span>
+            <span class="blue">effect: "fade",</span>        <span class="green">    //效果</span>
             <span class="blue">delayTime:300,</span>         <span class="green">  //鼠标经过时对象切换迟滞时间，推荐值为300ms</span>
             <span class="blue">hoverChange:true,</span>      <span class="green"> //鼠标经过是否切换</span>
             <span class="blue">hoverChagneClass:"on"</span> <span class="green">//鼠标移上去的样式</span>
@@ -87,7 +82,7 @@
 
         <div class="eachbox">
         	<div class="each-l">
-        		<div class="banner3" id="banner3">
+        		<div class="banner3">
         			<a href="#" title="">
         				<div style="background:url(images/1.jpg) no-repeat"></div>
         			</a>
@@ -103,9 +98,9 @@
         		</div>
         	</div>
         	<div class="each-r">
-        		<h2>1- 默认模式</h2>
-        		<code>$("#banner3").myslide();</code><br/>
-                <p class="green">//默认模式是fade效果，所有参数为默认：隔5秒自动切换，图片过渡效果持续1秒 
+        		<h2>1- 默认最简易模式</h2>
+        		<code>$(".banner3>a").myslide();</code><br/>
+                <p class="green">//最简易模式不带任何参数，即直接切换选择器选择的对象组，所有参数为默认：隔5秒自动切换，图片过渡效果持续1秒 
                 	
                 </p>
         	</div>
@@ -272,35 +267,6 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hoverChagneClass:"act",<br/>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;effect:"slide",<br/>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hoverChange:false<br/>
-                });</code><br/>
-                <p class="green">//有fade和slide 两种方式
-                    
-                </p>
-            </div>
-            <div class="cle"></div>
-        </div>
-
-
-        <div class="eachbox">
-            <div class="each-l">
-                <div class="banner9">
-                    <a href="#" title="">
-                        <div style="background:url(images/1.jpg) no-repeat"></div>
-                    </a>
-                    <a href="#" title="">
-                        <div style="background:url(images/2.jpg) no-repeat"></div>
-                    </a>
-                    <a href="#" title=""> 
-                        <div style="background:url(images/3.jpg) no-repeat"></div>
-                    </a>
-                    <a href="#" title="">
-                        <div style="background:url(images/4.jpg) no-repeat"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="each-r">
-                <h2>6-  只有透明文字背景</h2>
-                <code>$('.banner9>a').myslide({<br/>
                 });</code><br/>
                 <p class="green">//有fade和slide 两种方式
                     

@@ -70,7 +70,7 @@
                 if(_self.parent().children(".slide_ul").length==0){
                     var slide_ul = "<ul class='slide_ul clr'>";
                     for (var i = 0; i <= num; i++) {
-                        slide_ul += "<li ></li>"
+                        slide_ul += "<li>"+(i+1)+"</li>"
                     }
                     slide_ul += "</ul>";
                     _self.eq(num).after(slide_ul);
@@ -83,9 +83,8 @@
                 _self.parent().children(".slide_ul").children("li").click(function() {
                     init_auto();
                     n=$(this).index();
-                    fadeAB();
-                    $(this).addClass(options.hoverChagneClass);
-                    $(this).siblings().removeClass(options.hoverChagneClass);
+                    delayRun = setTimeout(fadeAB,options.delayTime);
+                    $(this).addClass(options.hoverChagneClass).siblings().removeClass(options.hoverChagneClass);
                     if (options.linkText) {
                         //文字
                         if(_self.attr("alt")){
@@ -93,17 +92,17 @@
                         }else if(_self.attr("title").length){
                            _self.parent().children(".sli-text").html(_self.eq(n).attr("title"));
                         }
-
+                    
                     }
+                    return false;
                 });
                 
-                if(options.hoverChange){
+            if(options.hoverChange){
                  _self.parent().children(".slide_ul").children("li").hover(function(){
                     init_auto();
                     n=$(this).index();
                     delayRun = setTimeout(fadeAB,options.delayTime);
-                    $(this).addClass(options.hoverChagneClass);
-                    $(this).siblings().removeClass(options.hoverChagneClass);
+                    $(this).addClass(options.hoverChagneClass).siblings().removeClass(options.hoverChagneClass);
                     if (options.linkText) {
                         //文字
                         if(_self.attr("alt")){
@@ -112,9 +111,11 @@
                            _self.parent().children(".sli-text").html(_self.eq(n).attr("title"));
                         }
                     }
+
                     },function(){
                           clearTimeout(delayRun);
                     });
+
                 }
             }
             //程序开始先运行一次,如果不先运行一次，则会切换到第一张图片，那么和刚开始看到的

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Myslide</title>
+<meta name="Description" content="说明" />
+<meta name="Keywords" content="关键词" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/demo.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.myslide1.1.js"></script>
+<!--[if lte IE 6]>
+  <script type="text/javascript" src="js/png.js"></script>
+  <script>
+      PNG.fix('.png');
+  </script>
+<![endif]-->
+<script type="text/javascript">
+	$(document).ready(function(){
+     
+         $(".banner5>a").myslide({
+            haveNum:true,
+            delayTime:500,
+            hoverChagneClass:"act"
+         }); 
+
+
+	});
+</script>
+</head>
+<body style="padding-bottom:500px;">
+
+
+    	<h1 class="title box">
+		基于jQuery的对象切换插件：
+		<span class="strong">myslide 1.0插件</span>
+		<a class="a_down" href="#">(点击下载)</a>
+		</h1>
+
+		<div class="allIntro ">
+			<h4>所有参数：</h4>
+			<pre>
+<span class="blue">options = $.extend({</span>
+            <span class="blue">autoChange: true,</span>      <span class="green"> //是否自动切换</span>
+            <span class="blue">changeTime: 5000,</span>      <span class="green"> //自动切换时间</span>
+            <span class="blue">prevBtn: null,</span>         <span class="green">    //上一张幻灯片按钮</span>
+            <span class="blue">nextBtn: null,</span>         <span class="green">    //下一张幻灯片按钮</span>
+            <span class="blue">haveNum: false,</span>        <span class="green">  //是否有数字导航</span>
+            <span class="blue">linkText: false,</span>       <span class="green">     //是否有带透明的文字背景</span>
+            <span class="blue">effect: "fade",</span>        <span class="green">    //效果</span>
+            <span class="blue">delayTime:300,</span>         <span class="green">  //鼠标经过时对象切换迟滞时间，推荐值为300ms</span>
+            <span class="blue">hoverChange:true,</span>      <span class="green"> //鼠标经过是否切换</span>
+            <span class="blue">hoverChagneClass:"on"</span> <span class="green">//鼠标移上去的样式</span>
+        <span class="blue">}, options || {});</span>
+		</pre>
+		</div>
+
+
+
+        <div class="eachbox clr">
+            <div class="each-l">
+                <div class="banner5">
+                    <a href="#" title="">
+                        <div style="background:url(images/1.jpg) no-repeat"></div>
+                    </a>
+                    <a href="#" title="">
+                        <div style="background:url(images/2.jpg) no-repeat"></div>
+                    </a>
+                    <a href="#" title=""> 
+                        <div style="background:url(images/3.jpg) no-repeat"></div>
+                    </a>
+                    <a href="#" title="">
+                        <div style="background:url(images/4.jpg) no-repeat"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="each-r">
+                <h2>3-  使用数字导航切换及自定义当前状态数字的class</h2>
+                <code>$('.banner5>a').myslide({<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;haveNum:true,<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hoverChagneClass:"act"<br/>
+                });</code><br/>
+                <p class="green">//hoverChagneClass用来自定义移上去的class
+                    
+                </p>
+            </div>
+        </div>
+
+
+
+
+	    
+
+</body>
+</html>

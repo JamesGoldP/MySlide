@@ -184,12 +184,12 @@ h1.title .strong{
 	background: #fff;
 	cursor: pointer;
 	border:1px solid #999;
-	padding:0 3px;
 	opacity:0.85;
-	height:13px;
+	/*text-indent: -9999px;*/
+	padding:3px;
 	line-height: 13px;
-	margin-right: 2px;
-	font-family: 	Verdana;
+	margin-right: 10px;
+	font-family: Verdana;
 }
 .banner5 .slide_ul li.act{
 	background: #FFFF9D;

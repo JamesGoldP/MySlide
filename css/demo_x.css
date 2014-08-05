@@ -1,0 +1,6 @@
+.slide1{
+	position:relative;width:600px;height:280px;overflow: hidden;
+}
+.slide1 .box{width:9999px;}
+.slide1 .box .item{float:left;width:600px;height:280px;position: relative;}
+.slide1 .box .item div{height:280px;}

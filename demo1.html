@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>无标题文档</title>
+<meta name="Description" content="说明" />
+<meta name="Keywords" content="关键词" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<link rel="stylesheet" href="css/demo.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.myslide.js"></script>
+<!--[if lte IE 6]>
+  <script type="text/javascript" src="statics/js/png.js"></script>
+  <script>
+      PNG.fix('.png');
+  </script>
+<![endif]-->
+<style type="text/css">
+	body{
+		padding-left: 300px;
+	}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#banner10").myslide({
+			linkText: true,
+			haveNum: true
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="banner10" id="banner10">
+		<a href="#" title="焦点图1">
+			<div style="background:url(images/1.jpg) no-repeat"></div>
+		</a>
+		<a href="#" title="焦点图2">
+			<div style="background:url(images/2.jpg) no-repeat"></div>
+		</a>
+		<a href="#" title="焦点图3"> 
+			<div style="background:url(images/3.jpg) no-repeat"></div>
+		</a>
+		<a href="#" title="焦点图4">
+			<div style="background:url(images/4.jpg) no-repeat"></div>
+		</a>
+	</div>
+</body>
+</html>

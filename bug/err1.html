@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>无标题文档</title>
+<meta name="Description" content="说明" />
+<meta name="Keywords" content="关键词" />
+<link rel="stylesheet" href="error.css" type="text/css" />
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.myslide_err1.js"></script>
+<!--<script type="text/javascript" src="jquery.myslide_true1.js"></script>-->
+<!--[if lte IE 6]>
+  <script type="text/javascript" src="statics/js/png.js"></script>
+  <script>
+      PNG.fix('.png');
+  </script>
+<![endif]-->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.banner').myslide({
+            haveNum:true,
+            hoverChagneClass:"act"
+        });
+	});
+</script>
+</head>
+<body>
+	<div class="banner">
+		<a href="#" class="item">
+			<div style="background:url(banner.jpg) no-repeat center center"></div>
+		</a>
+		<a href="#" class="item">
+			<div style="background:url(banner1.jpg) no-repeat center center"></div>
+		</a>
+	</div>
+    <p>可以看见浏览器宽度缩小的时候，banner并没有一直居中。这是疑问设置$("item")宽度的CSS设置为了_self.children("div").width()+"px",100%才是正解</p>
+</body>
+</html>

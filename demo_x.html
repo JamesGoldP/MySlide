@@ -6,9 +6,9 @@
 <meta name="Description" content="说明" />
 <meta name="Keywords" content="关键词" />
 <link rel="stylesheet" href="css/common.css" type="text/css" />
-<link rel="stylesheet" href="css/demo.css" type="text/css" />
+<link rel="stylesheet" href="css/demo_x.css" type="text/css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.myslide1.1.js"></script>
+<script type="text/javascript" src="js/jquery.myslide.js"></script>
 <!--[if lte IE 6]>
   <script type="text/javascript" src="js/png.js"></script>
   <script>
@@ -17,43 +17,43 @@
 <![endif]-->
 <script type="text/javascript">
 	$(document).ready(function(){
-         $(".banner1>a").myslide({
+        /*
+         $(".banner1").myslide({
          });
 
          $(".banner2>a").myslide({
          	prevBtn:"#prev",
 		    nextBtn:"#next"
          });
+        */
 
-         $(".banner3>a").myslide();
-     
-         $(".banner4>a").myslide({
+         $("#slide3").myslide();
+         /*
+         $(".banner4").myslide({
          	prevBtn:"#prev4",
 		    nextBtn:"#next4"
          });
-     
-         $(".banner5>a").myslide({
+         $(".banner5").myslide({
             haveNum:true,
             hoverChagneClass:"act"
          }); 
 
+         $(".banner6").myslide({
+            haveNum:true,
+            hoverChagneClass:"act",
+            linkText:true
+         }); 
 
-         $(".banner7>a").myslide({
+         $(".banner7").myslide({
             haveNum:true,
             hoverChagneClass:"act"
          });     
-
-         $(".banner8>a").myslide({
-            haveNum:true,
-            hoverChagneClass:"act",
-            effect:"slide",
-            hoverChange:false
+         $(".banner8").myslide({
+            linkText: true
          }); 
-
-         $(".banner9>a").myslide({
-         });  
-  
+         */
 	});
+
 </script>
 </head>
 <body>
@@ -83,45 +83,46 @@
 		</pre>
 		</div>
 
-        <div class="eachbox clr">
+        <div class="eachbox">
         	<div class="each-l">
-        		<div class="banner3">
-        			<a href="#" title="">
-        				<div style="background:url(images/1.jpg) no-repeat"></div>
+        		<div class="slide1" id="slide3">
+        			<a href="#"  class="item">
+                        <img src="" alt="" title="images/1.jpg" />
         			</a>
-        			<a href="#" title="">
-        				<div style="background:url(images/2.jpg) no-repeat"></div>
+        			<a href="#"  class="item">
+        				<img src="" alt="" title="images/2.jpg" />
         			</a>
-        			<a href="#" title=""> 
-        				<div style="background:url(images/3.jpg) no-repeat"></div>
-        			</a>
-        			<a href="#" title="">
-        				<div style="background:url(images/4.jpg) no-repeat"></div>
-        			</a>
+                    <a href="#"  class="item">
+                        <img src="" alt="" title="images/3.jpg" />
+                    </a>
+                    <a href="#"  class="item">
+                        <img src="" alt="" title="images/4.jpg" />
+                    </a>
         		</div>
         	</div>
         	<div class="each-r">
         		<h2>1- 默认最简易模式</h2>
-        		<code>$(".banner3>a").myslide();</code><br/>
+        		<code>$(".banner3").myslide();</code><br/>
                 <p class="green">//最简易模式不带任何参数，即直接切换选择器选择的对象组，所有参数为默认：隔5秒自动切换，图片过渡效果持续1秒 
                 	
                 </p>
         	</div>
+        	<div class="cle"></div>
         </div>
 
-        <div class="eachbox clr">
+        <div class="eachbox">
         	<div class="each-l">
         		<div class="banner4">
-        			<a href="#" title="">
+        			<a href="#"  class="item">
         				<div style="background:url(images/1.jpg) no-repeat"></div>
         			</a>
-        			<a href="#" title="">
+        			<a href="#" class="item">
         				<div style="background:url(images/2.jpg) no-repeat"></div>
         			</a>
-        			<a href="#" title=""> 
+        			<a href="#" class="item"> 
         				<div style="background:url(images/3.jpg) no-repeat"></div>
         			</a>
-        			<a href="#" title="">
+        			<a href="#" class="item">
         				<div style="background:url(images/4.jpg) no-repeat"></div>
         			</a>
         			<div class="run-btn4  absolute">
@@ -132,7 +133,7 @@
         	</div>
         	<div class="each-r">
         		<h2>2- 带前后按钮</h2>
-        		<code>$('.banner4>a').myslide({<br/>
+        		<code>$('.banner4').myslide({<br/>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prevBtn:"#prev4",<br/>
 		                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nextBtn:"#next4"<br/>
         		});</code><br/>
@@ -140,29 +141,30 @@
                 	
                 </p>
         	</div>
+        	<div class="cle"></div>
         </div>
 
 
-        <div class="eachbox clr">
+        <div class="eachbox">
             <div class="each-l">
                 <div class="banner5">
-                    <a href="#" title="">
+                    <a href="#" class="item">
                         <div style="background:url(images/1.jpg) no-repeat"></div>
                     </a>
-                    <a href="#" title="">
+                    <a href="#" class="item">
                         <div style="background:url(images/2.jpg) no-repeat"></div>
                     </a>
-                    <a href="#" title=""> 
+                    <a href="#" class="item"> 
                         <div style="background:url(images/3.jpg) no-repeat"></div>
                     </a>
-                    <a href="#" title="">
+                    <a href="#" class="item">
                         <div style="background:url(images/4.jpg) no-repeat"></div>
                     </a>
                 </div>
             </div>
             <div class="each-r">
                 <h2>3-  使用数字导航切换及自定义当前状态数字的class</h2>
-                <code>$('.banner5>a').myslide({<br/>
+                <code>$('.banner5').myslide({<br/>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;haveNum:true,<br/>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hoverChagneClass:"act"<br/>
                 });</code><br/>
@@ -170,29 +172,30 @@
                     
                 </p>
             </div>
+            <div class="cle"></div>
         </div>
 
 
-         <div class="eachbox clr">
+         <div class="eachbox">
             <div class="each-l">
                 <div class="banner6">
-                    <a href="#" title="a标签里面的title,如果IMG则是里面的alt1">
+                    <a href="#" title="a标签里面的title,如果IMG则是里面的alt1" class="item">
                         <div style="background:url(images/1.jpg) no-repeat"></div>
                     </a>
-                    <a href="#" title="a标签里面的title,如果IMG则是里面的alt2">
+                    <a href="#" title="a标签里面的title,如果IMG则是里面的alt2" class="item">
                         <div style="background:url(images/2.jpg) no-repeat"></div>
                     </a>
-                    <a href="#" title="a标签里面的title,如果IMG则是里面的alt3"> 
+                    <a href="#" title="a标签里面的title,如果IMG则是里面的alt3" class="item"> 
                         <div style="background:url(images/3.jpg) no-repeat"></div>
                     </a>
-                    <a href="#" title="a标签里面的title,如果IMG则是里面的alt4">
+                    <a href="#" title="a标签里面的title,如果IMG则是里面的alt4" class="item">
                         <div style="background:url(images/4.jpg) no-repeat"></div>
                     </a>
                 </div>
             </div>
             <div class="each-r">
                 <h2>4-  切换对象为其他，这里为包含图片和标题的层</h2>
-                <code>$('.banner6>a').myslide({<br/>
+                <code>$('.banner6').myslide({<br/>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;haveNum:true,<br/>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hoverChagneClass:"act",<br/>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;linkText:true<br/>
@@ -201,22 +204,23 @@
                     
                 </p>
             </div>
+            <div class="cle"></div>
         </div>
 
 
-        <div class="eachbox clr">
+        <div class="eachbox">
             <div class="each-l">
                 <div class="banner7">
-                    <a href="#" title="">
+                    <a href="#" class="item">
                         <div style="background:url(images/1.jpg) no-repeat"></div>
                     </a>
-                    <a href="#" title="">
+                    <a href="#" class="item">
                         <div style="background:url(images/2.jpg) no-repeat"></div>
                     </a>
-                    <a href="#" title=""> 
+                    <a href="#" class="item"> 
                         <div style="background:url(images/3.jpg) no-repeat"></div>
                     </a>
-                    <a href="#" title="">
+                    <a href="#" class="item">
                         <div style="background:url(images/4.jpg) no-repeat"></div>
                     </a>
                     <ul class="slide_ul">
@@ -224,75 +228,48 @@
                         <li><img src="images/2_s.jpg" alt="" title="" width="67" height="40"/></li>
                         <li><img src="images/3_s.jpg" alt="" title="" width="67" height="40"/></li>
                         <li><img src="images/4_s.jpg" alt="" title="" width="67" height="40"/></li>
+                        
                     </ul>
                 </div>
             </div>
             <div class="each-r">
                 <h2>5-  小图片切换</h2>
-                <code>$('.banner7>a').myslide({<br/>
+                <code>$('.banner7').myslide({<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;haveNum:true,
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hoverChagneClass:"act"<br/>
                 });</code><br/>
-                <p class="green">//如果想换成图片,直接加一个class为slide_ul就行了。
+                <p class="green">//如果想换成图片,直接加一个class为slide_ul就行了,//也可以自定义slide_ul
                     
                 </p>
             </div>
+            <div class="cle"></div>
         </div>
 
 
-        <div class="eachbox clr">
-            <div class="each-l">
-                <div class="banner8">
-                    <a href="#" title="">
-                        <div style="background:url(images/1.jpg) no-repeat"></div>
-                    </a>
-                    <a href="#" title="">
-                        <div style="background:url(images/2.jpg) no-repeat"></div>
-                    </a>
-                    <a href="#" title=""> 
-                        <div style="background:url(images/3.jpg) no-repeat"></div>
-                    </a>
-                    <a href="#" title="">
-                        <div style="background:url(images/4.jpg) no-repeat"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="each-r">
-                <h2>6-  更换效果</h2>
-                <code>$('.banner8>a').myslide({<br/>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;haveNum:true,<br/>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hoverChagneClass:"act",<br/>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;effect:"slide",<br/>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hoverChange:false<br/>
-                });</code><br/>
-                <p class="green">//有fade和slide 两种方式
-                    
-                </p>
-            </div>
-        </div>
+
 
         <div class="eachbox">
             <div class="each-l">
-                <div class="banner9">
-                    <a href="#" title="">
+                <div class="banner8">
+                    <a href="#" class="item" title="第一个标题">
                         <div style="background:url(images/1.jpg) no-repeat"></div>
                     </a>
-                    <a href="#" title="">
+                    <a href="#" class="item" title="第二个标题">
                         <div style="background:url(images/2.jpg) no-repeat"></div>
                     </a>
-                    <a href="#" title=""> 
+                    <a href="#" class="item" title="第三个标题"> 
                         <div style="background:url(images/3.jpg) no-repeat"></div>
                     </a>
-                    <a href="#" title="">
+                    <a href="#" class="item" title="第四个标题">
                         <div style="background:url(images/4.jpg) no-repeat"></div>
                     </a>
                 </div>
             </div>
             <div class="each-r">
-                <h2>6-  只有透明文字背景</h2>
-                <code>$('.banner9>a').myslide({<br/>
+                <h2>7-  只有透明文字背景</h2>
+                <code>$('.banner8').myslide({<br/>
                 });</code><br/>
-                <p class="green">//有fade和slide 两种方式
+                <p class="green">
                     
                 </p>
             </div>

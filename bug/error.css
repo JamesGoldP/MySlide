@@ -1,0 +1,30 @@
+li{list-style-type:none;}
+/*banner*/
+.banner {
+    height:400px;
+    position:relative;
+    overflow: hidden;
+}
+.banner  div{
+	height:400px;
+}
+.banner .slide_ul{
+	position:absolute;
+    right:20px;
+    bottom:5px;
+    left:50%;
+    margin-left:-20px; 
+}
+.banner .slide_ul li{
+	float:left;
+	cursor: pointer;
+    background: url(li.gif);
+    width:13px;
+    height:13px;
+    margin-right: 10px;
+    text-indent: -9999px;
+}
+.banner .slide_ul li.act{
+	background: url(li-h.gif);
+}
+/*banner*/

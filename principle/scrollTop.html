@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<meta name="Description" content="说明" />
+<meta name="Keywords" content="关键词" />
+<link rel="stylesheet" href="/common/common.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<style type="text/css">
+body,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,dd{margin:0px;padding:0px;}
+body{font:12px "宋体","微软雅黑" ;line-height: 22px;}
+li{list-style-type:none;}
+img,input{border:0px;}
+.fl{float:left;}
+.fr{float:right;}
+
+/* 清除浮动*/
+.clr:after{  
+    content:"";  
+    height:0px;  
+    visibility:hidden;  
+    display:block;  
+    clear:both;  
+}    
+.clr{  
+    zoom:1;  
+} 
+.slide_x{
+	position:relative;width:600px;height:250px;overflow: hidden;
+}
+.slide_x .box{height:9999px;}
+.slide_x .box .item{width:600px;height:250px;position: relative;}
+.slide_x .box .item div{height:250px;}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+	var n=-1;
+	var _moveVal;
+	var max=$("#slide_x .box .item").length-1;
+	at();
+	setInterval(at, 3000);
+	function at(){
+	   _now=n;
+       _next= n>=max ? 0: ++n;
+       _moveVal=$("#slide_x .box .item").height()*_next;
+       if(_next==0&&_now==max){
+	      $("#slide_x .box .item").eq(0).css({"top":$("#slide_x .box .item").height()*(max+1)});
+	      _moveVal=$("#slide_x .box .item").height()*(max+1);
+	    }else if(_now==0){
+	       $("#slide_x .box .item").eq(0).css({"top":""});
+	       $("#slide_x").scrollTop(0);
+	    };
+       $("#slide_x").animate({"scrollTop":(_moveVal)});
+       n=_next;
+	} 
+});
+	
+</script>
+<body>
+	<div id="slide_x" class="slide_x">
+		<div class="box">
+			<a href="#" title="焦点图1" class="item">
+				<div style="background:url(../images/1.jpg) no-repeat"></div>
+			</a>
+			<a href="#" title="焦点图2" class="item">
+				<div style="background:url(../images/2.jpg) no-repeat"></div>
+			</a>
+			<a href="#" title="焦点图3" class="item"> 
+				<div style="background:url(../images/3.jpg) no-repeat"></div>
+			</a>
+		</div>
+	</div>
+</body>
+</html>

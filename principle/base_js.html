@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<style type="text/css">
+    #slide{
+		width:500px;
+		height:500px;
+        position: absolute;
+	}
+	#slide a{
+		display: block;
+		width:500px;
+		height:500px;
+		position: absolute;
+	}
+	#slide  a img{
+        width:500px;
+        height:500px;
+	}
+	
+</style>
+
+</script>
+<body>
+	<div id="slide" class="absolute">
+			<a  href="javascript:void(0);" title="">
+				<img src="images/1.jpg" alt="" title="" />
+			</a>
+			<a  href="javascript:void(0);" title="">
+				<img src="images/2.jpg" alt="" title="" />
+			</a>
+			<a href="javascript:void(0);" title="">
+				<img src="images/3.jpg" alt="" title="" />
+			</a>
+			<a  href="javascript:void(0);" title="">
+				<img src="images/4.jpg" alt="" title="" />
+			</a>
+			<ul id="pic_ul">  
+		        <li><<</li>  
+		        <li class="on">1</li>  
+		        <li>2</li>  
+		        <li>3</li>  
+		        <li>4</li>  
+		        <li>>></li>  
+		    </ul> 
+	</div>
+</body>
+</html>
+<script type="text/javascript">  
+    var n=0;//播放第几张  
+    var o=1;//之前播放的编号  
+    var s= 0,t=4000;//时间间隔  
+    var setT,setP=null;//定时器  
+    var pic=document.getElementById("slide").getElementsByTagName("a");//图片所在div  
+    var li=document.getElementById("pic_ul").getElementsByTagName("li");//图片对应li  
+    function change_pic(a){  
+        clearInterval(setT);  
+        if(a<0)a=pic.length-1;  
+        if(a>=pic.length)a=0;  
+        for(var l=0;l<li.length;l++){  
+            li[l].className="";  
+        }  
+        for(var i=0;i<pic.length;i++){  
+            if(a==i){  
+                pic[i].style.opacity=0;  
+                pic[i].style.filter="alpha(opacity=0)";  
+                pic[i].style.zIndex=3;  
+            }else{  
+                pic[i].style.opacity=1;  
+                pic[i].style.filter="alpha(opacity=100)";  
+                if(i==o){  
+                    pic[i].style.zIndex=2;  
+                }else{  
+                    pic[i].style.zIndex=1;  
+                }  
+            }  
+        }  
+        li[a+1].className="on";  
+        s=0;//从0开始  
+        o=n=a;  
+        setT=setInterval(function(){  
+            s++;  
+            if(s>100){  
+                o=a;//完成动画后身份转变  
+                clearInterval(setT);  
+            }else{  
+                pic[a].style.opacity=s/100;  
+                pic[a].style.filter="alpha(opacity="+s+")";  
+            }  
+        },20)  
+    }  
+    for(var i=0;i<li.length;i++){  
+        li[i].onclick=(function(a){  
+            return function(){  
+                if(a==0){  
+                    change_pic(n-1);//上一张  
+                }else if(a==li.length-1){  
+                    change_pic(n+1);//下一张  
+                }else{  
+                    change_pic(a-1);//当前张  
+                }  
+            }  
+        })(i)  
+    }  
+    //定时播放控制  
+    setP=setInterval(function(){ n++;change_pic(n)},t);  
+    document.getElementById("pic_div").onmouseover=function(){clearInterval(setP)}  
+    document.getElementById("pic_div").onmouseout=function(){  
+        setP=setInterval(function(){ n++;change_pic(n)},t);  
+    }  
+</script>  

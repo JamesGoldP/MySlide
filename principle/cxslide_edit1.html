@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" href="../css/common.css" type="text/css" />
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.myslide.js"></script>
+</head>
+<style type="text/css">
+body,ul,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,dd{margin:0px;padding:0px;}
+body{font:12px "宋体","微软雅黑" ;line-height: 22px;}
+li{list-style-type:none;}
+img,input{border:0px;}
+.fl{float:left;}
+.fr{float:right;}
+
+/* 清除浮动*/
+.clr:after{  
+    content:"";  
+    height:0px;  
+    visibility:hidden;  
+    display:block;  
+    clear:both;  
+}    
+.clr{  
+    zoom:1;  
+} 
+.slide_x{
+	position:relative;width:600px;height:250px;overflow: hidden;
+}
+.slide_x .box{width:9999px;}
+.slide_x .box .item{float:left;width:600px;height:250px;position: relative;}
+.slide_x .box .item div{height:280px;}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#slide_x").myslide({
+			linkText: true,
+			haveNum: true,
+			effect: "x"
+		});
+	});
+</script>
+<body>
+	<div id="slide_x" class="slide_x">
+		<div class="box">
+			<a href="#" title="焦点图1" class="item">
+				<div style="background:url(../images/1.jpg) no-repeat"></div>
+			</a>
+			<a href="#" title="焦点图2" class="item">
+				<div style="background:url(../images/2.jpg) no-repeat"></div>
+			</a>
+			<a href="#" title="焦点图3" class="item"> 
+				<div style="background:url(../images/3.jpg) no-repeat"></div>
+			</a>
+		</div>
+	</div>
+</body>
+</html>
